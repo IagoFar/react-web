@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import '@fortawesome/fontawesome-free/css/all.css';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,7 +28,41 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="navbar bg-base-100 m-0">
+        <div className="navbar-start">      
+          <a href="/" className="btn btn-ghost"><i className="fas fa-home"></i>Home</a>
+          <a href="/aboutme" className="btn btn-ghost ml-5 mr-5"><i className="fas fa-user"></i>About me</a>
+          <a href="/projects" className="btn btn-ghost"><i className="fas fa-clipboard"></i>Projects</a>
+        </div>
+        <div className="navbar-center">
+          <a href="/" className="text-2xl transition ease-in-out duration-200 hover:text-purple-700">
+            <i className="fas fa-x "></i>341
+          </a>
+        </div>
+      </div>
         {children}
+        <footer className="footer bg-neutral text-neutral-content p-10">
+        <aside>
+          <p>
+            <br />
+            Iago Fariñas Fernández
+            <br />
+            X341
+          </p>
+        </aside>
+        <nav>
+          <h6 className="footer-title">Socials</h6>
+          <div className="grid grid-flow-col gap-4">
+            <a href="https://www.youtube.com/@iagofari" target="_blank"><i className="fa-brands fa-youtube fa-2xl"></i></a>
+            <a href="https://es.linkedin.com/in/iago-fari%C3%B1as-120610299" target="_blank"><i className="fa-brands fa-linkedin fa-2xl"></i></a>
+            <a href="https://www.instagram.com/iagofafe/" target="_blank"><i className="fa-brands fa-instagram fa-2xl"></i></a>
+          </div>
+        </nav>
+        <nav>
+          <h6 className="footer-title">Contact me</h6>
+          <a href="mailto:contact@x341.es" className="text-lg"><i className="fas fa-envelope fa-xl"></i> contact@x341.es</a>
+        </nav>
+      </footer>
       </body>
     </html>
   );
