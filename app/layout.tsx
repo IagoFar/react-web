@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import '@fortawesome/fontawesome-free/css/all.css';
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,14 +31,14 @@ export default function RootLayout({
       >
         <div className="navbar bg-base-100 m-0">
         <div className="navbar-start">      
-          <link href="/" className="btn btn-ghost"><i className="fas fa-home"></i>Home</link>
+          <Link href="/" className="btn btn-ghost"><i className="fas fa-home"></i>Home</Link>
           <a href="/aboutme" className="btn btn-ghost ml-5 mr-5"><i className="fas fa-user"></i>About me</a>
           <a href="/projects" className="btn btn-ghost"><i className="fas fa-clipboard"></i>Projects</a>
         </div>
         <div className="navbar-center">
-          <link href="/" className="text-2xl transition ease-in-out duration-200 hover:text-purple-700">
+          <Link href="/" className="text-2xl transition ease-in-out duration-200 hover:text-purple-700">
             <i className="fas fa-x "></i>341
-          </link>
+          </Link>
         </div>
       </div>
         {children}
